@@ -1,0 +1,26 @@
+{
+  "name": "dev-e",
+  "version": "0.0.1",
+  "description": "My mini site",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiliogarza/dev-e.git"
+  },
+  "keywords": [
+    "Emilio"
+  ],
+  "author": "Emilio Garza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emiliogarza/dev-e/issues"
+  },
+  "homepage": "https://github.com/emiliogarza/dev-e#readme",
+  "dependencies": {
+    "httpdispatcher": "^2.1.0"
+  }
+}
