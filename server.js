@@ -7,7 +7,7 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
-function renderHTML(path, response) {
+function renderStuff(path, response) {
     fs.readFile(path, null, function(error, data) {
         if (error) {
             response.writeHead(404);
@@ -22,26 +22,23 @@ function renderHTML(path, response) {
 function handleRequest(request, response) { 
     if (request.url.indexOf('.css') !== -1) {
         response.writeHead(200, {'Content-type' : 'text/css'});
-        var cssFile = fs.readFileSync('./'+request.url, {encoding: 'utf8'});
-        response.write(cssFile);
-        response.end();
     }
     else if (request.url.indexOf('.js') !== -1) {
         response.writeHead(200, {'Content-type' : 'text/javascript'});
-        var jsFile = fs.readFileSync('./'+request.url, {encoding: 'utf8'});
-        response.write(jsFile);
-        response.end();
     }    
     else {
         response.writeHead(200, {'Content-Type' : 'text/html'});
-        var path = url.parse(request.url).pathname;
-        if (path == '/') {
-            renderHTML('./index.html', response); 
-        }
-        else {
-            renderHTML('./'+path+'.html', response); 
-        }    
     }
+    var path = url.parse(request.url).pathname;    
+    if (path == '/') {
+        renderStuff('./index.html', response); 
+    }
+    else if (path.indexOf('.') !== -1) {        
+        renderStuff('./'+path, response); 
+    }
+    else {
+        renderStuff('./'+path+'.html', response);
+    }    
 }
 
 http.createServer(handleRequest).listen(8080);

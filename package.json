@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/emiliogarza/dev-e/issues"
   },
-  "homepage": "https://github.com/emiliogarza/dev-e#readme",
-  "dependencies": {
-    "httpdispatcher": "^2.1.0"
-  }
+  "homepage": "https://github.com/emiliogarza/dev-e#readme"
 }
