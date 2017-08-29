@@ -1,3 +1,50 @@
+/* Border-box FTW https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
-    font-family: 'Arial Rounded MT Bold';
+    font-family: 'Arial Rounded MT Bold',sans-serif;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Accessibility CSS
+ */
+.skippy {
+    color: white;
+    left: 0px;
+    position: absolute;
+    top: -40px; 
+    transition: top 1s ease-out, background 1s linear;
+}
+
+.skippy:focus {
+    color: #000;
+    left: 0px;
+    position: absolute;    
+    top: 0px;
+    transition: top .1s ease-in, background .5s linear;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -500px;
+    top: -500px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*
+ * Header CSS
+ */
+header {
+    text-align: center;
+}
+header ul {
+    list-style-type: none;
+    padding: 0;
+}
+header li {
+    display: inline; 
 }
