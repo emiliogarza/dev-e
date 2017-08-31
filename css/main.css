@@ -1,15 +1,22 @@
-/* Border-box FTW https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* 
+ * Border-box FTW https://www.paulirish.com/2012/box-sizing-border-box-ftw/ 
+ * Fluid Fonts are cool: https://www.smashingmagazine.com/2016/05/fluid-typography/
+ */
 html {
     font-family: 'Arial Rounded MT Bold',sans-serif;
+    font-size: calc( 14px + 8 * ((100vw - 375px) / 1280));
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
+
 body {
     margin: 0;
 }
-
 
 /*
  * Colors I think I'm going to use
@@ -35,8 +42,9 @@ body {
     top: -40px; 
     transition: top 1s ease-out, background 1s linear;
 }
+
 .skippy:focus {
-    color: #4c4c4c;
+    color: #5E412F;
     left: 0px;
     position: absolute;    
     top: 0px;
@@ -58,7 +66,28 @@ body {
  */
 h1,
 h2,
-h3 {
+h3,
+.home-link {
+    color: #5E412F;
+}
+
+h1,
+.home-link {
+    font-size: 2.074em;
+}
+
+h2 {
+    font-size: 1.728em;
+}
+
+h2 {
+    font-size: 1.44em;
+}
+
+h1 a,
+h2 a, 
+h3 a,
+.home-link {
     color: #5E412F;
 }
 
@@ -69,6 +98,7 @@ h3 {
  a {
      color: #F07818;
  }
+
  a:hover {
     color: #F0A830;
  }
@@ -79,19 +109,48 @@ h3 {
  * ==========
  */
 header {
+    padding-top: 1em;
     text-align: center;
 }
-header h1 {
+
+.home-link {
+    font-weight: 700;
     margin-bottom: 0;
 }
+
+.home-link {
+    text-decoration: none;
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition-duration: 0.3s;
+}
+
+.home-link:hover {
+    transform: translateY(-10px);    
+}
+
+.home-link:hover:after {
+    content: '> back to home';
+    font-size: .3em;
+    display: block;
+    position: absolute;
+}
+
 header ul {
     list-style-type: none;
     padding: 20px 0;
     margin-top: 0;
 }
+
 header li {
     display: inline; 
 }
+
 header li:not(:first-child) {
     margin-left: 10px;
+}
+
+#main-nav {
+
 }
