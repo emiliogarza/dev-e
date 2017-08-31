@@ -3,15 +3,30 @@ html {
     font-family: 'Arial Rounded MT Bold',sans-serif;
     box-sizing: border-box;
 }
-body {
-    margin: 0;
-}
 *, *:before, *:after {
     box-sizing: inherit;
 }
+body {
+    margin: 0;
+}
+
+
+/*
+ * Colors I think I'm going to use
+ * ===============================
+ * Dark Brown   : #5E412F
+ * Preachyness  : #FCEBB6
+ * Tealish      : #78C0A8
+ * Bold Orange  : #F07818
+ * Light Orange : #F0A830
+ * Light Gray   : #f2f2f2
+ * Dark Gray    : #4c4c4c
+ */
+
 
 /*
  * Accessibility CSS
+ * =================
  */
 .skippy {
     color: white;
@@ -20,9 +35,8 @@ body {
     top: -40px; 
     transition: top 1s ease-out, background 1s linear;
 }
-
 .skippy:focus {
-    color: #000;
+    color: #4c4c4c;
     left: 0px;
     position: absolute;    
     top: 0px;
@@ -39,7 +53,30 @@ body {
 }
 
 /*
+ * Headings
+ * ========
+ */
+h1,
+h2,
+h3 {
+    color: #5E412F;
+}
+
+/*
+ * Links
+ * =====
+ */
+ a {
+     color: #F07818;
+ }
+ a:hover {
+    color: #F0A830;
+ }
+
+
+/*
  * Header CSS
+ * ==========
  */
 header {
     text-align: center;
@@ -54,4 +91,7 @@ header ul {
 }
 header li {
     display: inline; 
+}
+header li:not(:first-child) {
+    margin-left: 10px;
 }
