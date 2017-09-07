@@ -1,5 +1,5 @@
 /*
- * I figured, I might as well write a basic router and node server
+ * I figured I might as well write a basic router and node server
  * 
  */
 

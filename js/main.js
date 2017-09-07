@@ -1,19 +1,21 @@
+/* Get stuff */
 function $(el) {
     return document.querySelectorAll(el);
 }
 
-var showMe: function() {
-    for (var i = 0;i < el.length; i++){
-        var thisel = el[i];
-        if (typeof thisel.style != 'undefined' && thisel.style.display === 'none') {
-            thisel.style.display = 'block';
-        } else {
-            thisel.style.display = 'none';
+/* Do stuff */
+function Interaction(el) {
+    this.toggle = function(state) {
+        for(var i = 0; i < el.length; i++) {
+            if (el[i].style.display === 'none') {
+                el[i].style.display = 'block';
+            } else {
+                el[i].style.display = 'none';
+            }
         }
-      }
-
+    }
 }
 
+new Interaction($("nav"));
 
-//$("button").toggleMe();
-//toggleMe($("nav"));
+//new Interaction($("#main-content"));
