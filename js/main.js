@@ -4,7 +4,13 @@ function $(el) {
 }
 
 /* Do stuff */
-function Interaction(el) {
+function Interaction(elem) {
+    el = $(elem);
+    this.click = function(fun) {
+        for(var i = 0; i < el.length; i++) {
+            el[i].onclick = fun;
+        }
+    }
     this.toggle = function(state) {
         for(var i = 0; i < el.length; i++) {
             if (el[i].style.display === 'none') {
@@ -16,6 +22,9 @@ function Interaction(el) {
     }
 }
 
-new Interaction($("nav"));
+new Interaction(".thoughts").click(function() {
+    console.log("hello World!");
+});
+
 
 //new Interaction($("#main-content"));
