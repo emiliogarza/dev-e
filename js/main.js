@@ -22,7 +22,7 @@ function Interaction(elem) {
     }
 }
 
-new Interaction(".thoughts").click(function() {
+new Interaction("a.thoughts").click(function() {
     console.log("hello World!");
 });
 
