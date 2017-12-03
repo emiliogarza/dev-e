@@ -1,3 +1,9 @@
+/*
+ * FULL SITE STUFF
+ * ===============
+ */
+
+
 /* 
  * Border-box FTW https://www.paulirish.com/2012/box-sizing-border-box-ftw/ 
  * Fluid Fonts are cool: https://www.smashingmagazine.com/2016/05/fluid-typography/
@@ -164,14 +170,30 @@ header li:not(:first-child) {
 }
 
 /*
- * Main
- * =====
+ * Main and General Layout Elements
+ * ================================
  */
 #main-content {
     text-align: center;
     margin: 20px auto;
 }
 
+.row {
+    width: 768px;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+}
+
+/*
+ * Hero Section
+ * ============
+ */
+ .hero {
+    background: #f2f2f2;    
+ }
  
 /*
  * Cards
@@ -180,16 +202,9 @@ header li:not(:first-child) {
 .card {
     background: #f2f2f2;
     border-radius: 5px;
-    display: block;
-    margin: 20px auto;
-    padding: 20px;
-    width: 414px;
-}
-
-@media (max-width: 413px) { 
-    .card {
-        width: 100%;
-    }    
+    display: block;    
+    padding: 20px;  
+    margin-bottom: 20px;  
 }
 
 .card.img {
@@ -207,8 +222,18 @@ header li:not(:first-child) {
  * Social Media Icons
  * ==================
  */
-
 svg {
      display: inline-block;
      width: 40px;
  }
+
+
+/*
+ * MOBILE/TABLET SITE STUFF
+ * =================
+ */
+ @media (max-width: 767px) { 
+    .row {
+        width: 100%;
+    }    
+}
