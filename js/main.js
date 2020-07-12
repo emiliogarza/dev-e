@@ -22,10 +22,12 @@ function Interaction(elem) {
     }
 }
 
-new Interaction("a.thoughts").click(function() {
+new Interaction(".blogLink").click(function(event) {
+    event.preventDefault();
 
+    // location.href = this.getAttribute("href");
 });
 
+function moveHomeOffscreen() {
 
-
-//new Interaction($("#main-content"));
+}

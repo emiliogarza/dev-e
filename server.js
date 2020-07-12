@@ -1,6 +1,6 @@
 /*
  * I figured I might as well write a basic router and node server
- * 
+ *
  */
 
 var http = require('http');
@@ -19,26 +19,27 @@ function renderStuff(path, response) {
     });
 }
 
-function handleRequest(request, response) { 
+function handleRequest(request, response) {
     if (request.url.indexOf('.css') !== -1) {
         response.writeHead(200, {'Content-type' : 'text/css'});
     }
     else if (request.url.indexOf('.js') !== -1) {
         response.writeHead(200, {'Content-type' : 'text/javascript'});
-    }    
+    }
     else {
         response.writeHead(200, {'Content-Type' : 'text/html'});
     }
-    var path = url.parse(request.url).pathname;    
+    var path = url.parse(request.url).pathname;
     if (path == '/') {
-        renderStuff('./index.html', response); 
+        renderStuff('./index.html', response);
     }
-    else if (path.indexOf('.') !== -1) {        
-        renderStuff('./'+path, response); 
+    else if (path.indexOf('.') !== -1) {
+        renderStuff('./'+path, response);
     }
     else {
         renderStuff('./'+path+'.html', response);
-    }    
+    }
 }
 
 http.createServer(handleRequest).listen(8080);
+console.log("Server started at port 8080");
