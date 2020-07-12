@@ -28,6 +28,56 @@ p {
     margin: 0;
 }
 
+.centered-layout-container {
+    max-width: 600px;
+}
+
+@media (max-width: 767px) {
+    .centered-layout-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Blog Stuff */
+
+.blog-posts-heading {
+    text-align: left;
+}
+
+.blog-intro-title {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #4c4c4c;
+}
+
+.blog-intro-subtitle {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.blog-intro-subtitle:before {
+    content: '>';
+    position: absolute;
+    left: 0;
+}
+
+.blog p,
+.blog h2,
+.blog h3 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+}
+
 /*
  * Colors I think I'm going to use
  * ===============================
@@ -185,14 +235,6 @@ header li:not(:first-child) {
     display: block;
     margin: 20px auto;
     padding: 20px;
-    max-width: 600px;
-}
-
-@media (max-width: 767px) {
-    .card {
-        max-width: 100%;
-        margin: 20px;
-    }
 }
 
 .card.img {

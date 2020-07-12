@@ -23,7 +23,7 @@ function Interaction(elem) {
 }
 
 new Interaction(".blogLink").click(function(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     // location.href = this.getAttribute("href");
 });
